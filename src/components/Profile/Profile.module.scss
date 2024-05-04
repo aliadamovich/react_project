@@ -1,0 +1,99 @@
+.content {
+	grid-area: c;
+	
+}
+
+.cover {
+	position: relative;
+	padding-bottom: 20%;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		
+	}
+}
+
+.container {
+	max-width: 1400px;
+	padding: 0 10px;
+	margin: 0px auto;
+	@media (max-width:1500px){
+		max-width: 1024px;
+	};
+}
+.profile {
+	position: relative;
+	margin-top: -200px;
+	padding-bottom: 20px;
+	display: flex;
+	gap: 60px;
+	z-index: 100;
+	border-bottom: 1px solid rgb(237, 241, 245);
+	&_user {
+		text-align: center;
+	}
+
+	&_menu {
+		display: flex;
+		gap: 10px;
+		align-items: end;
+		li{
+			padding: 5px;
+			width: 60px;
+			height: 60px;
+			border-radius: 8px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+			transition: all 0.3s ease 0s;
+			&.active {
+				background-color: rgb(172, 108, 234);
+				a{
+					color: white;
+				}
+			}
+			a{
+				color: inherit;
+				font-size: 13px;
+				font-weight: 500;
+			}
+			&:hover{
+				background-color: rgb(172, 108, 234);
+				a{
+					transition: all 0.3s ease 0s;
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+.avatar {
+	margin-bottom: 10px;
+	img {
+		border-radius: 15px;
+		border: 3px solid white;
+	}
+}
+
+
+.name{
+	font-family: "Quicksand", sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: rgb(79, 81, 91);
+	p{
+		font-weight: 400;
+		font-size: 13px;
+		margin-top: 10px;
+	}
+}
+
+.posts{
+	font-size: 22px;
+}
