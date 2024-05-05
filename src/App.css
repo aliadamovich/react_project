@@ -11,4 +11,6 @@
 	color: rgb(79, 81, 91);
 }
 
-
+.wrapper__container {
+	grid-area: c;
+}

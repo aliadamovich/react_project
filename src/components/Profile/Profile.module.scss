@@ -1,11 +1,9 @@
 .content {
-	grid-area: c;
-	
 }
 
 .cover {
 	position: relative;
-	padding-bottom: 20%;
+	padding-bottom: 30%;
 	img {
 		position: absolute;
 		width: 100%;
@@ -21,7 +19,8 @@
 	max-width: 1400px;
 	padding: 0 10px;
 	margin: 0px auto;
-	@media (max-width:1500px){
+	
+	@media (max-width:1500px) {
 		max-width: 1024px;
 	};
 }
@@ -63,7 +62,8 @@
 			transition: all 0.3s ease 0s;
 			cursor: pointer;
 			&.active {
-				background-color: rgb(172, 108, 234);
+				background: linear-gradient(to bottom right,rgb(189, 139, 237), rgb(129, 29, 222));
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 				a{
 					color: white;
 				}
@@ -72,11 +72,12 @@
 				color: inherit;
 				font-size: 13px;
 				font-weight: 500;
+				transition: all 0.3s ease 0s;
 			}
 			&:hover{
-				background-color: rgb(172, 108, 234);
+				background: linear-gradient(to bottom right, rgb(189, 139, 237), rgb(129, 29, 222));
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 				a{
-					transition: all 0.3s ease 0s;
 					color: white;
 				}
 			}
