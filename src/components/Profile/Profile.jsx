@@ -1,7 +1,7 @@
 import c from './Profile.module.scss';
 import {Feed} from './Feed/Feed';
 
-export const Profile = () => {
+export const Profile = (props) => {
  return(
 	 <div className={c.content}>
 		 <div className={c.cover}>
@@ -29,7 +29,7 @@ export const Profile = () => {
 				 <div className={c.photos}>
 					 My photos
 				 </div>
-				 <Feed />
+				 <Feed posts={props.posts}/>
 				 <div className={c.activity}>
 					 My activity
 				 </div>

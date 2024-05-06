@@ -1,4 +1,6 @@
 .post {
+	align-self: start;
+
 	&__content{
 		display: grid;
 		grid-template-columns: 100px auto;
@@ -13,9 +15,19 @@
 		 'b b'
 		 'l l';
 		.avatar{
+			position: relative;
 			grid-area: a;
 			// grid-row: 1 / 2;
 			margin: auto;
+			&::after{
+			content: '';
+				position: absolute;
+				width: 1px;
+				height: 200%;
+				top: 110%;
+				left: 50%;
+				background: rgb(237, 241, 245);
+			}
 			img {
 				width: 50px;
 				height: 50px;

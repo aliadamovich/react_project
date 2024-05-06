@@ -1,7 +1,7 @@
 .body__message{
 	display: flex;
 	align-items: center;
-	gap: 40px;
+	gap: 30px;
 }
 
 .message__who {
@@ -19,8 +19,8 @@
 
 .message__avatar {
 	position: relative;
-	width: 40px;
-	height: 40px;
+	width: 35px;
+	height: 35px;
 	img{
 		position: absolute;
 		width: 100%;
@@ -35,7 +35,7 @@
 	font-size: 18px;
 	position: relative;
 	border: 1px solid rgb(129, 29, 222);
-	padding: 20px;
+	padding: 15px;
 	border-radius: 8px;
 &::before {
 		content: '';
