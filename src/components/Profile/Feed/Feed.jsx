@@ -1,7 +1,7 @@
 import { MyPost } from './MyPost/MyPost';
 import c from './Feed.module.scss';
 import React from 'react';
-import { addPostActionCreator, updateNewPostTextActionCreator } from './../../../redux/state'
+import { addPostActionCreator, updateNewPostTextActionCreator } from './../../../redux/reducers/profileReducer'
 
 export const Feed = (props) => {
 	

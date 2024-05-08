@@ -1,3 +1,6 @@
+import { dialogReducer } from "./reducers/dialogsReducer";
+import { profileReducer } from "./reducers/profileReducer";
+
 export let store = {
 	
 	_storage: {
@@ -199,47 +202,10 @@ export let store = {
 	},
 
 	dispatch(action) {
-		if (action.type === 'ADD-POST') {
-			let newPost = {
-				"userId": 1,
-				"id": 12,
-				"title": this._storage.profilePage.newPostText,
-				"body": 'new post'
-			}
-			this._storage.profilePage.posts = [newPost, ...this._storage.profilePage.posts]
-			this._storage.profilePage.newPostText = '';
-			this.rerenderEntireTree(this._storage);
-		} 
-		else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-			this._storage.profilePage.newPostText = action.newText;
-			this.rerenderEntireTree(this._storage)
-		} 
-		else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
-			this._storage.dialogPage.newMessageText = action.body;
-			this.rerenderEntireTree(this._storage)
-		} 
-		else if (action.type === 'ADD-MESSAGE') {
-			let newMsg ={
-				"postId": 1,
-				"id": 11,
-				"name": this._storage.dialogPage.newMessageText,
-				"email": "Eliseo@gardner.biz",
-				"body": 'abfhds'
-			}
-			this._storage.dialogPage.messages = [...this._storage.dialogPage.messages, newMsg]
-			this._storage.dialogPage.newMessageText = '';
-			this.rerenderEntireTree(this._storage)
-		}
+		this._storage.profilePage = profileReducer(this._storage.profilePage, action)
+		this._storage.dialogPage = dialogReducer(this._storage.dialogPage, action)
+
+		this.rerenderEntireTree(this._storage);
 	}
 }
-
-export const addPostActionCreator = () => ({ type: 'ADD-POST' })
-export const updateNewPostTextActionCreator = (text) => ({
-	type: 'UPDATE-NEW-POST-TEXT',
-	newText: text
-})
-export const updateNewMessageTextActionCreator = (msg) => ({
-	type: 'UPDATE-NEW-MESSAGE-TEXT',
-	body: msg
-})
-export const sendNewMessageActionCreator = () => ({ type: 'ADD-MESSAGE' })
+ 
