@@ -1,36 +1,41 @@
 import { MyPost } from './MyPost/MyPost';
 import c from './Feed.module.scss';
 import React from 'react';
+import { addPostActionCreator, updateNewPostTextActionCreator } from './../../../redux/state'
+
 export const Feed = (props) => {
-	const newPosts = props.posts.map(p => <MyPost message={p.title}/>)
+	
+	const newPosts = props.posts.posts.map(p => <MyPost message={p.title}/>)
 
 	return (
 		<div className={c.posts}>
 			<div className={c.postCreate}>
-				<PostCreate holder="What's new?" buttonText="Publish"/>
+				<PostCreate newPostText={props.posts.newPostText} dispatch={props.dispatch} />
 			</div>
-			<MyPost message="Хозяйка не дает кушоц..." time="14 hours, 36 minutes" number="3"/>
-			<MyPost message="Обожрался шерсти...Блевал" time="1 day" number="19"/>
-			<MyPost message="Обожрался шерсти...Блевал" time="1 day" number="19"/>
+
 			{ newPosts }
 		</div>
 	)
 }
 
-export const PostCreate = (props) => {
 
+export const PostCreate = (props) => {
 	let textArea = React.createRef();
-	console.log(textArea)
+
 	function createPost () {
-		let text = textArea.value;
-		console.log(text)
+		props.dispatch(addPostActionCreator())
+	}
+
+	function addPostText() {
+		let text = textArea.current.value;
+		props.dispatch(updateNewPostTextActionCreator(text))
 	}
 
 	return(
 		<div className={c.postCreate__content}>
 			<div className={c.postCreate__body}>
-				<textarea ref={textArea} placeholder={props.holder} name="" id=""></textarea>
-				<button onClick={createPost}>{props.buttonText}</button>
+				<textarea value={props.newPostText} onChange={addPostText} ref={textArea} placeholder="What's new?" name="" id=""></textarea>
+				<button onClick={createPost}>Publish</button>
 			</div>
 			<div className={c.postCreate__icons}>
 				<div className={c.postCreate__icon}>

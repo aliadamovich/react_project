@@ -10,7 +10,7 @@ export const MyPost = (props) => {
 				<div className={c.title}>
 					<span>Кот Вареникович</span> posted a new comment
 				</div>
-				<div className={c.time}>{props.time} <span>ago</span></div>
+				<div className={c.time}>{props.time}<span> ago</span></div>
 				<div className={c.body}>
 					<div>{props.message}</div>
 				</div>

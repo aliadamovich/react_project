@@ -29,7 +29,7 @@ export const Profile = (props) => {
 				 <div className={c.photos}>
 					 My photos
 				 </div>
-				 <Feed posts={props.posts}/>
+				 <Feed posts={props.posts} dispatch={props.dispatch}/>
 				 <div className={c.activity}>
 					 My activity
 				 </div>
