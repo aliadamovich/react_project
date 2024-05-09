@@ -1,17 +1,15 @@
 
 .wrapper {
+	position: relative;
 	font-size: 24px;
-	display: grid;
-	grid-template-rows: 60px 1fr;
-	grid-template-columns: 60px 1fr;
-	grid-template-areas: 
-	'n h'
-	"n c";
-	margin: 0 auto;
 	color: rgb(79, 81, 91);
 }
 
 .wrapper__container {
-	grid-area: c;
+
 }
 
+:root {
+	--header-height: 60px;
+	/* Высота заголовка */
+}

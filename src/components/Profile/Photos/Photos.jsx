@@ -2,7 +2,7 @@ import c from './Photos.module.scss';
 
 
 export const Photos = (props) => {
-	console.log(props)
+
 	const photoArray = props.photoGreed.map(greed => <PhotoGreed src={greed.photo}/>)
 	return (
 		<div className={c.photos__container}>

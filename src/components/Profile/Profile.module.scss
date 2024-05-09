@@ -3,7 +3,7 @@
 
 .cover {
 	position: relative;
-	padding-bottom: 30%;
+	padding-bottom: 20%;
 	img {
 		position: absolute;
 		width: 100%;
@@ -21,7 +21,7 @@
 	margin: 0px auto;
 	
 	@media (max-width:1500px) {
-		max-width: 1024px;
+		max-width: 1200px;
 	};
 }
 .profile {
@@ -33,7 +33,7 @@
 	column-gap: 20px;
 	row-gap: 40px;
 	display: grid;
-	grid-template-columns: 20% auto 25%;
+	grid-template-columns: 25% auto 20%;
 	grid-template-rows: 1fr auto;
 	grid-template-areas: 
 	'a m m'

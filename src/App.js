@@ -18,11 +18,9 @@ function App(AppProps) {
 				<Navbar />
 				<div className='wrapper__container'>
 					<Routes>
-						{/* <Route path='/profile' element={<Profile posts={AppProps.store._storage.profilePage} dispatch={AppProps.dispatch} />}/> */}
 						<Route path='/profile' element={<Profile posts={AppProps.state.profilePage} dispatch={AppProps.dispatch} />}/>
-						{/* <Route path='/dialogs/*' element={<Dialogs dUsers={AppProps.store._storage.dialogPage.users} dMessages={AppProps.store._storage.dialogPage} dPhotos={AppProps.store._storage.dialogPage.photos} dispatch={AppProps.dispatch} />} /> */}
 						<Route path='/dialogs/*' element={<Dialogs dUsers={AppProps.state.dialogPage.users} dMessages={AppProps.state.dialogPage} dPhotos={AppProps.state.dialogPage.photos} dispatch={AppProps.dispatch} />} />
-						<Route path='/photos' element={<Photos />} />
+						<Route path='/gallery' />
 					</Routes>
 				</div>
 			</div>

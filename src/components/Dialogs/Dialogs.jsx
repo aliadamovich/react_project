@@ -120,7 +120,6 @@ export const Dialogs = (props) => {
 									</li>
 								</ul>
 							</div>
-
 						</div>
 						<div className={c.recent__disclaimer}>
 							<ul>
@@ -146,7 +145,6 @@ export const MessageCreate = (props) => {
 	function updateText (e) {
 		let msg = e.target.value;
 		props.dispatch(updateNewMessageTextActionCreator(msg))
-
 	}
 
 	return (

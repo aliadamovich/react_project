@@ -5,14 +5,13 @@ import { addPostActionCreator, updateNewPostTextActionCreator } from './../../..
 
 export const Feed = (props) => {
 	
-	const newPosts = props.posts.posts.map(p => <MyPost message={p.title}/>)
+	const newPosts = props.posts.posts.map(p => <MyPost message={p.body} type={p.type}/>)
 
 	return (
 		<div className={c.posts}>
 			<div className={c.postCreate}>
 				<PostCreate newPostText={props.posts.newPostText} dispatch={props.dispatch} />
 			</div>
-
 			{ newPosts }
 		</div>
 	)

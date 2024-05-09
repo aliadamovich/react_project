@@ -3,26 +3,26 @@ let initialState = {
 		{
 			"userId": 1,
 			"id": 1,
-			"title": "Хозяйка не дает кушоц...",
-			"body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+			"type": "replied",
+			"body": "А кому чейчас легко?"
 		},
 		{
 			"userId": 1,
 			"id": 2,
-			"title": "Обожрался шерсти...Блевал",
-			"body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+			"type": "posted a new activity comment",
+			"body": "Хозяйка не дает кушоц...",
 		},
 		{
 			"userId": 1,
 			"id": 3,
-			"title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
-			"body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+			"type": "posted a new comment",
+			"body": "Обожрался шерсти...Блевал",
 		},
 		{
 			"userId": 1,
 			"id": 3,
-			"title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
-			"body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+			"type": "posted a new comment",
+			"body": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
 		},
 	],
 	newPostText: '',
@@ -34,21 +34,24 @@ let initialState = {
 		{ id: 5, photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSidZKizZD8jqRTyFfF6EX847Pco_nqHEDriDXzCdd6-scCrBPVB3BZS-WPyA&s' },
 		{ id: 6, photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLtjIBmdOdAdhj47kLXFeRvHp6JXdC3hb3TbtJQD8RuWaN2qt7nIVUX-4o5g&s' },
 		{ id: 7, photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ws3u18qBabEqm3Da_bJo51XU-5RI6wefipoXsm8PULKwrPubgx8b9P-ZXQ&s' },
-	]
+	],
+	countActivity() {
+		 let activity = this.posts.slice(0, 3);
+		 return activity;
+	}
 }
 
 export const profileReducer = (state = initialState, action) => {
-	// debugger;
+
 	switch (action.type) {
 		case 'ADD-POST':
 			let newPost = {
 				"userId": 1,
 				"id": 12,
-				"title": state.newPostText,
-				"body": 'new post'
+				"type": "posted a new comment",
+				"body": state.newPostText,
 			}
-			// state.posts = [newPost, ...state.posts]
-			// state.newPostText = '';
+
 			return {
 				...state,
 				posts: [newPost, ...state.posts],
@@ -56,7 +59,6 @@ export const profileReducer = (state = initialState, action) => {
 			}
 
 		case 'UPDATE-NEW-POST-TEXT':
-			// state.newPostText = action.newText;
 			return{
 				...state,
 				newPostText: action.newText
