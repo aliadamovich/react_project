@@ -1,6 +1,7 @@
 .body__message{
 	display: flex;
 	align-items: center;
+	justify-content: end;
 	gap: 30px;
 }
 
@@ -35,15 +36,15 @@
 	font-size: 18px;
 	position: relative;
 	border: 1px solid rgb(129, 29, 222);
-	padding: 15px;
+	padding: 10px;
 	border-radius: 8px;
 &::before {
 		content: '';
 		position: absolute;
-		width: 20px;
+		width: 15px;
 		height: 1px;
-		top: 11px;
-		left: -15px;
+		top: 18px;
+		right: -25px;
 		background: rgb(129, 29, 222);
 		transform: rotate(-45deg) translateX(-50%);
 	}
@@ -51,10 +52,10 @@
 	&::after {
 		content: '';
 		position: absolute;
-		width: 20px;
+		width: 15px;
 		height: 1px;
-		top: 40px;
-		left: -15px;
+		top: 18px;
+		right: -25px;
 		background: rgb(129, 29, 222);
 		transform: rotate(45deg) translateX(-50%);
 	}

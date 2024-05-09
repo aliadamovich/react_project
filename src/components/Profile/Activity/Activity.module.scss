@@ -1,0 +1,58 @@
+.activity {
+
+	&__container {}
+
+	&__title {
+		position: relative;
+		font-family: "Quicksand";
+		font-size: 20px;
+		font-weight: 700;
+		color: rgb(79, 81, 91);
+		padding-bottom: 20px;
+		margin-bottom: 30px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 13%;
+			height: 2px;
+			bottom: 0px;
+			left: 0;
+			background: #8c30e2;
+		}
+	}
+	&__item{
+
+		&:not(:last-child){
+			margin-bottom: 18px;
+		}
+				&::before {
+					content: '';
+					// position: absolute;
+					display: block;
+					width: 4px;
+					height: 4px;
+					// top: 30%;
+					// left: -20px;
+					border-radius: 50%;
+					background: rgb(129, 29, 222);
+					// margin-right: 15px;
+				}
+	}
+
+	&__post {
+		font-size: 14px;
+		margin-bottom: 12px;
+
+		span {
+			color: rgb(17, 16, 16);
+			font-weight: 600;
+		}
+		
+	}
+
+	&__time {
+		font-size: 13px;
+		color: rgb(187, 187, 220);
+	}
+}

@@ -33,7 +33,7 @@
 	column-gap: 20px;
 	row-gap: 40px;
 	display: grid;
-	grid-template-columns: 300px auto 200px;
+	grid-template-columns: 20% auto 25%;
 	grid-template-rows: 1fr auto;
 	grid-template-areas: 
 	'a m m'
@@ -118,4 +118,35 @@
 	padding-top: 30px;
 	border-top: 1px solid rgb(237, 241, 245);
 	grid-area: ph;
+}
+
+.friendsCounter {
+	padding: 0 20px 20px 20px;
+	&__container {
+		display: flex;
+		justify-content: center;
+		gap: 25px;
+		border-bottom: 1px solid rgb(237, 241, 245);
+		padding-bottom: 15px;
+	}
+
+	&__friends,
+		&__groups {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			font-size: 11px;
+			gap: 5px;
+			font-weight: 500;
+			font-family: 'Inter';
+		span {
+			color: #8c30e2;
+			font-size: 20px;
+		}
+	}
+
+	&__groups {
+		
+	}
 }

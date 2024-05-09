@@ -12,11 +12,13 @@
 	// align-items: start;
 	border-top: 1px solid rgb(237, 241, 245);
 	border-left: 1px solid rgb(237, 241, 245);
+	border-right: 1px solid rgb(237, 241, 245);
 }
 
 .postCreate{
 	&__content {
-		padding: 0 20px;
+		padding: 0 20px 20px 20px;
+		border-bottom: 1px solid rgb(237, 241, 245);
 	}
 	&__body{
 		
