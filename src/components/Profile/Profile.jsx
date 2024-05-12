@@ -2,7 +2,7 @@ import c from './Profile.module.scss';
 import {FeedContainer} from './Feed/FeedContainer';
 import { Photos } from './Photos/Photos';
 import { Activity } from './Activity/Activity';
-
+import { PhotosContainer } from './Photos/PhotosContainer';
 
 export const Profile = (props) => {
 	// console.log(props)
@@ -44,11 +44,11 @@ export const Profile = (props) => {
 							 </div>
 						 </div>
 					 </div>
-					 <Photos store={props.store}/>
+					 <PhotosContainer store={props.store}/>
 				 </div>
 				 <FeedContainer store={props.store}/>
 				 <div className={c.activity}>
-					<Activity store={props.store} />
+					{/* <Activity store={props.store} /> */}
 				 </div>
 			 </div>
 		 </div>

@@ -5,10 +5,8 @@ import { dialogReducer } from "./reducers/dialogsReducer";
 
 export let reducers = combineReducers({
 	profilePage: profileReducer,
-	dialogPage: dialogReducer,
+	dialoPage: dialogReducer,
 })
 
-export let store = configureStore({
-	reducer: reducers
-})
+export let store = configureStore({ reducer: reducers })
 

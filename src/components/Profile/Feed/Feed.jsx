@@ -7,14 +7,14 @@ import { PostCreate } from './PostCreate';
 
 export const Feed = (props) => {
 	// debugger
-	const newPosts = props.posts.map(p => <MyPost message={p.body} type={p.type}/>)
+	const newPosts = props.profilePage.posts.map(p => <MyPost message={p.body} type={p.type}/>)
 
 	return (
 		<div className={c.posts}>
 			<div className={c.postCreate}>
 
 				<PostCreate 
-				newPostText={props.newPostText} 
+				newPostText={props.profilePage.newPostText} 
 				addPost={props.addPost} 
 				updatePostText={props.updatePostText} />
 

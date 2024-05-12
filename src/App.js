@@ -18,7 +18,7 @@ function App(AppProps) {
 				<Navbar />
 				<div className='wrapper__container'>
 					<Routes>
-						<Route path='/profile' element={<Profile store={AppProps.store} />}/>
+						<Route path='/profile' element={<Profile />}/>
 						<Route path='/dialogs/*' element={<DialogsContainer store={AppProps.store} />} />
 						<Route path='/gallery' />
 					</Routes>

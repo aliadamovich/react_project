@@ -4,12 +4,12 @@ import c from './Dialogs.module.scss';
 import { Messages } from './Messages/Messages';
 
 export const Dialogs = (props) => {
+	// debugger;
+	const dialogsArray = props.dialogPage.users
+	.map((d, index) => <DialogItem name={d.name} id={d.id} nickname={d.username} photos={props.dialogPage.photos[index]} />)
+	const messagesArray = props.dialogPage.messages
+	.map(m => <Messages text={m.name} photos={props.dialogPage.photos[0]} />)
 
-	const dialogsArray = props.users
-	.map((d, index) => <DialogItem name={d.name} id={d.id} nickname={d.username} photos={props.photos[index]} />)
-	
-	const messagesArray = props.messages.map(m => <Messages text={m.name} photos={props.photos[0]} />)
-	
 	return (
 		<div className={c.container}>
 			<div className={c.content}>
@@ -34,11 +34,14 @@ export const Dialogs = (props) => {
 					<div className={c.body__messages}>
 						{messagesArray}
 						<div className={c.messageCreate}>
+
 							<MessageCreate 
-							msg={props.messages}
-							newMessageText={props.newMessageText}
-							updateText={props.updateText}
-							addMessage={props.addMessage}/>
+								msg={props.dialogPage.messages}
+								newMessageText={props.dialogPage.newMessageText}
+								updateText={props.updateText}
+								addMessage={props.addMessage}
+							/>
+
 						</div>
 					</div>
 					<div className={c.body__recent}>

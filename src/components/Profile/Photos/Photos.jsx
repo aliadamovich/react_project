@@ -1,10 +1,9 @@
 import c from './Photos.module.scss';
 
-
 export const Photos = (props) => {
 	// debugger
-	let state = props.store.getState();
-	const photoArray = state.profilePage.photoGreed.map(greed => <PhotoGreed src={greed.photo}/>)
+
+	const photoArray = props.photoGreed.map(greed => <PhotoGreed src={greed.photo}/>)
 	return (
 		<div className={c.photos__container}>
 			<h3 className={c.photos__title}>My photos</h3>
