@@ -35,10 +35,6 @@ let initialState = {
 		{ id: 6, photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLtjIBmdOdAdhj47kLXFeRvHp6JXdC3hb3TbtJQD8RuWaN2qt7nIVUX-4o5g&s' },
 		{ id: 7, photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ws3u18qBabEqm3Da_bJo51XU-5RI6wefipoXsm8PULKwrPubgx8b9P-ZXQ&s' },
 	],
-	countActivity() {
-		 let activity = this.posts.slice(0, 3);
-		 return activity;
-	}
 }
 
 export const profileReducer = (state = initialState, action) => {

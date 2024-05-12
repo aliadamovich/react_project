@@ -1,10 +1,12 @@
 import c from './Profile.module.scss';
-import {Feed} from './Feed/Feed';
+import {FeedContainer} from './Feed/FeedContainer';
 import { Photos } from './Photos/Photos';
 import { Activity } from './Activity/Activity';
 
+
 export const Profile = (props) => {
-	console.log(props)
+	// console.log(props)
+	// debugger
  return(
 	 <div className={c.content}>
 		 <div className={c.cover}>
@@ -42,11 +44,11 @@ export const Profile = (props) => {
 							 </div>
 						 </div>
 					 </div>
-					 <Photos photoGreed={props.posts.photoGreed}/>
+					 <Photos store={props.store}/>
 				 </div>
-				 <Feed posts={props.posts} dispatch={props.dispatch}/>
+				 <FeedContainer store={props.store}/>
 				 <div className={c.activity}>
-					 <Activity posts={props.posts.posts} />
+					<Activity store={props.store} />
 				 </div>
 			 </div>
 		 </div>

@@ -8,10 +8,12 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function renderApp(state) {
-
+	// debugger
+	// console.log(store);
+	
 	root.render(
 		<React.StrictMode>
-			<App state={state} dispatch={store.dispatch.bind(store)} />
+			<App store={store} state={state} dispatch={store.dispatch.bind(store)} />
 		</React.StrictMode>
 	);
 }
@@ -22,6 +24,7 @@ store.subscribe(() => {
 	let state = store.getState()
 	renderApp(state);
 });
+
 
 reportWebVitals();
 

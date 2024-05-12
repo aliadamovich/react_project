@@ -2,14 +2,13 @@ import React from 'react';
 import { DialogItem } from './DialogItem/DialogItem';
 import c from './Dialogs.module.scss';
 import { Messages } from './Messages/Messages';
-import { sendNewMessageActionCreator, updateNewMessageTextActionCreator } from './../../redux/reducers/dialogsReducer'
 
 export const Dialogs = (props) => {
 
-	const dialogsArray = props.dUsers
-	.map((d, index) => <DialogItem name={d.name} id={d.id} nickname={d.username} photos={props.dPhotos[index]} />)
+	const dialogsArray = props.users
+	.map((d, index) => <DialogItem name={d.name} id={d.id} nickname={d.username} photos={props.photos[index]} />)
 	
-	const messagesArray = props.dMessages.messages.map(m => <Messages text={m.name} photos={props.dPhotos[0]} />)
+	const messagesArray = props.messages.map(m => <Messages text={m.name} photos={props.photos[0]} />)
 	
 	return (
 		<div className={c.container}>
@@ -35,7 +34,11 @@ export const Dialogs = (props) => {
 					<div className={c.body__messages}>
 						{messagesArray}
 						<div className={c.messageCreate}>
-							<MessageCreate msg={props.dMessages} dispatch={props.dispatch}/>
+							<MessageCreate 
+							msg={props.messages}
+							newMessageText={props.newMessageText}
+							updateText={props.updateText}
+							addMessage={props.addMessage}/>
 						</div>
 					</div>
 					<div className={c.body__recent}>
@@ -138,20 +141,22 @@ export const Dialogs = (props) => {
 }
 
 export const MessageCreate = (props) => {
-	function addMessage() {
-		props.dispatch(sendNewMessageActionCreator())
+	// debugger
+	function onAddMessage() {
+		props.addMessage()
+
 	}
 
-	function updateText (e) {
+	function onUpdateText (e) {
 		let msg = e.target.value;
-		props.dispatch(updateNewMessageTextActionCreator(msg))
+		props.updateText(msg);
 	}
 
 	return (
 		<div className={c.messageCreate__content}>
 			<div className={c.messageCreate__body}>
-				<textarea onChange={updateText} value={props.msg.newMessageText} placeholder='Write your message...'></textarea>
-				<button onClick={addMessage} >Send</button>
+				<textarea onChange={onUpdateText} value={props.newMessageText} placeholder='Write your message...'></textarea>
+				<button onClick={onAddMessage} >Send</button>
 			</div>
 			<div className={c.messageCreate__icons}>
 				<div className={c.messageCreate__icon}>
