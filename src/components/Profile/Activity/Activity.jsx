@@ -2,8 +2,7 @@ import { PostTitle } from '../Feed/MyPost/MyPost';
 import c from './Activity.module.scss';
 
 export const Activity = (props) => {
-	let state = props.store.getState();
-	const latestPosts = state.profilePage.posts.slice(0, 3).map(p => <PostTitle type={p.type} />)
+	const latestPosts = props.posts.slice(0, 3).map(p => <PostTitle type={p.type} key={p.id}/>)
 	// console.log(props)
 	return(
 		<div className={c.activity__container}>

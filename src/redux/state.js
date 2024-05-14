@@ -26,7 +26,7 @@ export let store = {
 				},
 				{
 					"userId": 1,
-					"id": 3,
+					"id": 4,
 					"type": "posted a new comment",
 					"body": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
 					},

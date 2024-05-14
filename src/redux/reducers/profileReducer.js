@@ -20,7 +20,7 @@ let initialState = {
 		},
 		{
 			"userId": 1,
-			"id": 3,
+			"id": 4,
 			"type": "posted a new comment",
 			"body": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
 		},
@@ -46,10 +46,10 @@ export const profileReducer = (state = initialState, action) => {
 				"id": 12,
 				"type": "posted a new comment",
 				"body": state.newPostText,
-			}
+			} 
 
 			return {
-				...state,
+				...state, 
 				posts: [newPost, ...state.posts],
 				newPostText: ''
 			}

@@ -8,7 +8,7 @@ import {Provider} from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-function renderApp() {
+// function renderApp() {
 	// debugger
 	// console.log(store);
 	
@@ -19,14 +19,14 @@ function renderApp() {
 			</Provider>
 		</React.StrictMode>
 	);
-}
+// }
 
-renderApp();
+// renderApp();
 
-store.subscribe(() => {
+// store.subscribe(() => {
 
-	renderApp();
-});
+// 	renderApp();
+// });
 
 
 reportWebVitals();
