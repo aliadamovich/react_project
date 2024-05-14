@@ -80,18 +80,25 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			color: rgb(129, 29, 222);
+			
 			padding: 2px 28px;
 			height: 40px;
 			border-radius: 18px;
 			transition: all 0.7s ease 0s;
-			border: 1px solid rgb(129, 29, 222);
-			background: #fff;
-			&:hover {
-				background: linear-gradient(to right, rgb(189, 139, 237), rgb(129, 29, 222));
-				color: #fff;
-				border: none;
-			}
+
 		}
-	
+	.followedBtn{
+		background: #fff;
+		border: 1px solid rgb(129, 29, 222);
+		color: rgb(129, 29, 222);
+
+	}
+
+	.unfollowedBtn {
+		background: linear-gradient(to right, rgb(189, 139, 237), rgb(129, 29, 222));
+			color: #fff;
+			&:hover{
+				opacity: 0.8;
+			}
+	}
 }

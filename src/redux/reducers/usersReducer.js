@@ -130,18 +130,9 @@ export const usersReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case 'TOGGLE-FOLLOW':
 			return {
-				...state,
-				// users: [...state, state.users.map(u => {
-				// 	if(u.id == action.Id) {
-				// 		return {
-				// 			...u,
-				// 			isFollowed: !u.isFollowed
-				// 		}
-				// 	}
-				// 	return {...u}
-				// })]
+
 				users: state.users.map(u => {
-					if(u.id === action.Id) {
+					if(u.id === action.userId) {
 						return {
 							...u,
 							isFollowed: !u.isFollowed
@@ -151,22 +142,14 @@ export const usersReducer = (state = initialState, action) => {
 				})
 			}
 			
-		// case 'SET-USERS':
-		// 	return {
-		// 		...state,
-		// 		users: [...state.users, ...action.array]
-		// 	}
+		case 'SET-USERS':
+			return { ...state, users: action.users }
+			// return {...state, users: [...state.users, ...action.users]}
 		default:
 			return state;
 	}
 }
 
-export const toggleFollowAC = (userId) => ({
-	type: 'TOGGLE-FOLLOW',
-	Id: userId
-})
+export const toggleFollowAC = (userId) => ({ type: 'TOGGLE-FOLLOW', userId })
 
-// export const setUsersAC =(userArray) => ({
-// 	type: 'SET-USERS',
-// 	array: userArray
-// })
+export const setUsersAC =(users) => ({type: 'SET-USERS', users })

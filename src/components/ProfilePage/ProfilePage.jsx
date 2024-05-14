@@ -1,9 +1,9 @@
-import c from './Profile.module.scss';
+import c from './ProfilePage.module.scss';
 import {FeedContainer} from './Feed/FeedContainer';
 import { ActivityContainer } from './Activity/ActivityContainer';
 import { PhotosContainer } from './Photos/PhotosContainer';
 
-export const Profile = (props) => {
+export const ProfilePage = (props) => {
 	// console.log(props)
 	// debugger
  return(

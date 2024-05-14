@@ -4,7 +4,7 @@ let initialState = {
 			"userId": 1,
 			"id": 1,
 			"type": "replied",
-			"body": "А кому чейчас легко?"
+			"body": "А кому сейчас легко?"
 		},
 		{
 			"userId": 1,

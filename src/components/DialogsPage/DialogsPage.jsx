@@ -1,10 +1,10 @@
 import React from 'react';
 import { DialogItem } from './DialogItem/DialogItem';
-import c from './Dialogs.module.scss';
+import c from './DialogsPage.module.scss';
 import { Messages } from './Messages/Messages';
 import { Search } from '../Search/Search';
 
-export const Dialogs = (props) => {
+export const DialogsPage = (props) => {
 	// debugger;
 	const dialogsArray = props.dialogPage.users
 	.map((d, index) => <DialogItem name={d.name} id={d.id} nickname={d.username} photos={props.dialogPage.photos[index]} key={d.id}/>)
@@ -24,9 +24,11 @@ export const Dialogs = (props) => {
 
 					</div>
 					<div className={c.body__messages}>
-						{messagesArray}
+						<div className={c.body__content}>
+							{messagesArray}
+						</div>
 						<div className={c.messageCreate}>
-
+							
 							<MessageCreate 
 								msg={props.dialogPage.messages}
 								newMessageText={props.dialogPage.newMessageText}
