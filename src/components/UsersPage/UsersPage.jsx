@@ -1,6 +1,6 @@
 import c from './UsersPage.module.scss';
 import { UsersContainer } from './UsersContainer';
-import { Search } from '../Search/Search';
+import { Search } from '../common/Search/Search';
 
 export const UsersPage = () => {
 	return(

@@ -2,7 +2,7 @@ import React from 'react';
 import { DialogItem } from './DialogItem/DialogItem';
 import c from './DialogsPage.module.scss';
 import { Messages } from './Messages/Messages';
-import { Search } from '../Search/Search';
+import { Search } from '../common/Search/Search';
 
 export const DialogsPage = (props) => {
 	// debugger;

@@ -1,12 +1,32 @@
+.users__wrap{}
+
+.users__load {
+	display: flex;
+	justify-self: center;
+	align-items: center;
+	background: linear-gradient(to right, rgb(189, 139, 237), rgb(129, 29, 222));
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	color: #fff;
+	padding: 2px 35px;
+	height: 40px;
+	border-radius: 18px;
+	transition: all 0.7s ease 0s;
+	margin-top: 20px;
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
 .users__body{
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 15px;
+	padding: 10px;
 }
 
 .card{
 	justify-content: center;
-	box-shadow: -10px 20px 35px rgba(64, 64, 64, 0.15);
+	box-shadow: -5px 5px 10px rgba(64, 64, 64, 0.15);
 	border-radius: 8px;
 	padding: 20px 40px;
 	text-align: center;
@@ -15,9 +35,10 @@
 	grid-template: auto auto auto 1fr auto / 1fr;
 	justify-items: center;
 	transition: all 0.3s ease 0s;
+	animation: slideInFromBottom 0.8s ease-in-out forwards;
 	cursor: pointer;
 	&:hover{
-		box-shadow: -10px 20px 35px rgba(64, 64, 64, 0.5);
+		box-shadow: -5px 5px 10px rgba(64, 64, 64, 0.5);
 	}
 
 	&__image{
@@ -52,6 +73,8 @@
 		font-family: 'Nunito Sans';
 	}
 	&__status{
+		max-width: 120px;
+		overflow: hidden;
 		text-align: center;
 		display: inline-flex;
 		position: relative;
@@ -100,5 +123,16 @@
 			&:hover{
 				opacity: 0.8;
 			}
+	}
+}
+@keyframes slideInFromBottom {
+	from {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
 	}
 }

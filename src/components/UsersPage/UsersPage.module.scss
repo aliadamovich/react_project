@@ -10,7 +10,7 @@
 	}
 	&__content{
 		display: grid;
-		grid-template-columns: 70% 30%;
+		grid-template-columns: 70% auto;
 		grid-template-areas:
 		 's side'
 		'u side';
@@ -18,8 +18,11 @@
 	}
 
 	&__cards {
+		position: relative;
 		margin-top: 15px;
 		grid-area: u;
+		overflow: hidden;
+		padding: 20px;
 	}
 }
 
