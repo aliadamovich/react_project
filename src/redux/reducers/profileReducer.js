@@ -35,6 +35,7 @@ let initialState = {
 		{ id: 6, photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLtjIBmdOdAdhj47kLXFeRvHp6JXdC3hb3TbtJQD8RuWaN2qt7nIVUX-4o5g&s' },
 		{ id: 7, photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1ws3u18qBabEqm3Da_bJo51XU-5RI6wefipoXsm8PULKwrPubgx8b9P-ZXQ&s' },
 	],
+	userProfile: null
 }
 
 export const profileReducer = (state = initialState, action) => {
@@ -58,14 +59,18 @@ export const profileReducer = (state = initialState, action) => {
 			return{
 				...state,
 				newPostText: action.newText
-			} 
+			}
+		
+		case 'SET-USER-PROFILE':
+			return {
+				...state, userProfile: action.profile
+			}
 
 		default: return state
 	}
 }
 
 export const addPostActionCreator = () => ({ type: 'ADD-POST' })
-export const updateNewPostTextActionCreator = (text) => ({
-	type: 'UPDATE-NEW-POST-TEXT',
-	newText: text
-})
+export const updateNewPostTextActionCreator = (text) => ({type: 'UPDATE-NEW-POST-TEXT',newText: text})
+
+export const setUserProfileAC = (profile) => ({type: 'SET-USER-PROFILE', profile})
