@@ -1,25 +1,28 @@
 // import logo from './logo.svg';
 
 import './App.scss';
-import { Header } from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import { Navbar } from './components/Navbar/Navbar';
 import { ProfilePageContainer } from './components/ProfilePage/ProfilePageContainer';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DialogsContainer } from './components/DialogsPage/DialogsContainer';
 import { UsersPage } from './components/UsersPage/UsersPage';
+import { GalleryContainer } from './components/GalleryPage/GalleryContainer';
+
 
 function App() {
 
   return (
 		<BrowserRouter>
 			<div className="wrapper">
-				<Header />
+				<HeaderContainer />
 				<Navbar />
 				<div className='wrapper__container'>
 					<Routes>
-						<Route path='/profile' element={<ProfilePageContainer />}/>
+						<Route path="/" element={<ProfilePageContainer />} />
+						<Route path='/profile/:userId?' element={<ProfilePageContainer />}/>
 						<Route path='/dialogs/*' element={<DialogsContainer  />} />
-						<Route path='/gallery' />
+						<Route path='/gallery' element={<GalleryContainer /> }/>
 						<Route path='/users' element={<UsersPage />} />
 					</Routes>
 				</div>

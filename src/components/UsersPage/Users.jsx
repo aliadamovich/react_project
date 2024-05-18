@@ -5,7 +5,7 @@ import { Loader } from '../common/Loader/Loader';
 import { NavLink } from 'react-router-dom';
 
 export const Users = (props) => {
-
+	
 	return (
 		<div className={c.users__wrap}>
 			{ props.isFetching ? <Loader /> : null}

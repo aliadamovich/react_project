@@ -21,25 +21,27 @@ function withRouter(Component) {
 	return ComponentWithRouterProp;
 }
 
+
 class ProfileAPIComponent extends React.Component {
-
+	
 	componentDidMount() {
-		
-		axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`)
+		// debugger
+		let profileId = this.props.router.params.userId;
+		if (!profileId) profileId = 1079;
+		axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${profileId}`)
 			.then(resp => {
-
-				// this.props.toggleIsFetching(false)
 				this.props.setUserProfile(resp.data);
 			})
 	}
 
 	render() {
-		// debugger;
 		return <ProfilePage {...this.props}/>
 	}
 }
 
-export const ProfilePageContainer = connect(mapStateToProps, mapDispatchToProps)(ProfileAPIComponent);
+let withUrlDataContainerComponent = withRouter(ProfileAPIComponent)
+
+export const ProfilePageContainer = connect(mapStateToProps, mapDispatchToProps)(withUrlDataContainerComponent);
 
 function mapStateToProps(state) {
 	return {

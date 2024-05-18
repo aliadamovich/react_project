@@ -168,6 +168,7 @@ export const usersReducer = (state = initialState, action) => {
 					...state,
 					isFetching: action.isFetching
 				}
+
 		default:
 			return state;
 	}
@@ -180,3 +181,4 @@ export const getUsersQuantityAC = (number) => ({ type: 'GET-USERS-QUANTITY', num
 export const changeCurrentPageAC = (pageNum) => ({ type: 'CHANGE-CURRENT-PAGE', page: pageNum});
 export const loadMoreUsersAC = () => ({type: 'LOAD-MORE-USERS'});
 export const toggleIsFetchingAC = (isFetching) => ({ type: 'TOGGLE-IS-FETCHING', isFetching})
+

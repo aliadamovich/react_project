@@ -56,6 +56,6 @@ function mapDispatchToProps(dispatch) {
 		getUsersQuantity: (number) => { dispatch(getUsersQuantityAC(number))},
 		changePage: (pageNum) => { dispatch(changeCurrentPageAC(pageNum))},
 		loadMoreUsers: () => { dispatch(loadMoreUsersAC())},
-		toggleIsFetching: (isFetching) => { dispatch(toggleIsFetchingAC(isFetching))}
+		toggleIsFetching: (isFetching) => { dispatch(toggleIsFetchingAC(isFetching))},
 	}
 }
