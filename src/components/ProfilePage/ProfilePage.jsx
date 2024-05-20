@@ -1,16 +1,16 @@
 import c from './ProfilePage.module.scss';
 import {FeedContainer} from './Feed/FeedContainer';
 import { ActivityContainer } from './Activity/ActivityContainer';
-import { PhotosContainer } from './Photos/PhotosContainer';
+import { PhotoGrid } from './../GalleryPage/Gallery';
 import { Loader } from '../common/Loader/Loader';
 import user from './../images/user.png';
 
 export const ProfilePage = (props) => {
-	
+	// debugger
 	if (!props.userProfile) {
 		return <Loader />
 	}
-	// debugger
+
  return(
 	 <div className={c.content}>
 		 <div className={c.cover}>
@@ -56,7 +56,7 @@ export const ProfilePage = (props) => {
 							 </div>
 						 </div>
 					 </div>
-					 <PhotosContainer store={props.store}/>
+					 <PhotoGrid photoGrid={props.photoGrid} />
 				 </div>
 				 <FeedContainer store={props.store}/>
 				 <div className={c.activity}>

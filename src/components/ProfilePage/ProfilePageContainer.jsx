@@ -28,7 +28,7 @@ class ProfileAPIComponent extends React.Component {
 		// debugger
 		let profileId = this.props.router.params.userId;
 		if (!profileId) profileId = 1079;
-		axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${profileId}`)
+		axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${profileId}`, {withCredentials: true})
 			.then(resp => {
 				this.props.setUserProfile(resp.data);
 			})
@@ -45,7 +45,9 @@ export const ProfilePageContainer = connect(mapStateToProps, mapDispatchToProps)
 
 function mapStateToProps(state) {
 	return {
-		userProfile: state.profilePage.userProfile
+		userProfile: state.profilePage.userProfile,
+		photoGrid: state.grid.photoGrid,
+		// myID: state.auth.autID.id,
 	}
 }
 

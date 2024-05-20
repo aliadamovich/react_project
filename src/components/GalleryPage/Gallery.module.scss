@@ -31,9 +31,10 @@
 
 .grid {
 	&__photo {
+		padding: 10px;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 25px;
+		gap: 10px;
 		grid-auto-flow: row;
 	}
 

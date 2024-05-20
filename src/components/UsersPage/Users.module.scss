@@ -100,32 +100,32 @@ padding: 20px 5px 10px 5px;
 		}
 	}
 	
-	button {
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+	// button {
+	// 		width: 100%;
+	// 		display: flex;
+	// 		justify-content: center;
+	// 		align-items: center;
 			
-			padding: 2px 28px;
-			height: 40px;
-			border-radius: 18px;
-			transition: all 0.7s ease 0s;
+	// 		padding: 2px 28px;
+	// 		height: 40px;
+	// 		border-radius: 18px;
+	// 		transition: all 0.7s ease 0s;
 
-		}
-	.followedBtn{
-		background: #fff;
-		border: 1px solid rgb(129, 29, 222);
-		color: rgb(129, 29, 222);
+	// 	}
+	// .followedBtn{
+	// 	background: #fff;
+	// 	border: 1px solid rgb(129, 29, 222);
+	// 	color: rgb(129, 29, 222);
 
-	}
+	// }
 
-	.unfollowedBtn {
-		background: linear-gradient(to right, rgb(189, 139, 237), rgb(129, 29, 222));
-			color: #fff;
-			&:hover{
-				opacity: 0.8;
-			}
-	}
+	// .unfollowedBtn {
+	// 	background: linear-gradient(to right, rgb(189, 139, 237), rgb(129, 29, 222));
+	// 		color: #fff;
+	// 		&:hover{
+	// 			opacity: 0.8;
+	// 		}
+	// }
 }
 @keyframes slideInFromBottom {
 	from {

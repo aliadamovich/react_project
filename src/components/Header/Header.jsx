@@ -15,7 +15,7 @@ export const Header = (props) => {
 				<div className={c.exit}>
 					
 					{
-					props.isAuth ? 
+					props.isAuth ?
 					<div className={c.exit__auth}>
 						<span className={c.exit__text}>{props.login}</span>
 						<a href='#' className={c.exit__avatar}>

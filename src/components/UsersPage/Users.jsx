@@ -4,8 +4,9 @@ import React from 'react';
 import { Loader } from '../common/Loader/Loader';
 import { NavLink } from 'react-router-dom';
 
+
 export const Users = (props) => {
-	
+	// debugger
 	return (
 		<div className={c.users__wrap}>
 			{ props.isFetching ? <Loader /> : null}
@@ -23,12 +24,16 @@ export const Users = (props) => {
 							<span className={c.card__country}>{'u.location.country'}</span>
 						</div>
 						<div className={c.card__status}>{u.status}</div>
-						<button onClick={() => { props.toggleFollow(u.id) }}
+						<button 
+						// disabled={props.followingInProgress.some(el => el === u.id)} 
+							onClick={() => {
+
+								props.toggleFollowUsers(u.id)
+							}}
 							className={u.followed ? c.followedBtn : c.unfollowedBtn}>
 							{u.followed ? 'Unfollow' : 'Follow'}
 						</button>
 					</div>)
-
 				}
 			</div>
 			<div className={c.users__load}>
