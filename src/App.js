@@ -7,6 +7,7 @@ import { ProfilePageContainer } from './components/ProfilePage/ProfilePageContai
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DialogsContainer } from './components/DialogsPage/DialogsContainer';
 import { UsersPage } from './components/UsersPage/UsersPage';
+import { LoginPage } from './components/LoginPage/LoginPage';
 import { GalleryContainer } from './components/GalleryPage/GalleryContainer';
 
 
@@ -24,6 +25,7 @@ function App() {
 						<Route path='/dialogs/*' element={<DialogsContainer  />} />
 						<Route path='/gallery' element={<GalleryContainer /> }/>
 						<Route path='/users' element={<UsersPage />} />
+						<Route path='/login' element={<LoginPage />} />
 					</Routes>
 				</div>
 			</div>

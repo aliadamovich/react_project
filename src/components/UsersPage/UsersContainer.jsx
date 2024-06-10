@@ -2,6 +2,8 @@ import { Users } from "./Users";
 import { connect } from "react-redux";
 import { loadMoreUsersThunkCreator, toggleFollowingProgressAC, toggleFollowAC, getUsersThunkCreator, followUsersThunkCreator } from "../../redux/reducers/usersReducer";
 import React from "react";
+import { withAuthRedirect } from './../../hoc/WithAuthRedirect';
+import { compose } from "redux";
 
 
 
@@ -20,17 +22,13 @@ class UsersAPIComponent extends React.Component {
 		return <Users 
 									users={this.props.users}
 									onLoadClick={this.onLoadClick.bind(this)}
-									// toggleFollow={this.props.toggleFollow}
 									isFetching={this.props.isFetching}
 									followingInProgress={this.props.followingInProgress}
-									// toggleFollowingProgress={this.props.toggleFollowingProgress}
 									toggleFollowUsers={this.props.toggleFollowUsers}
 									/>
 	}
 }
 
-
-export const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersAPIComponent);
 
 function mapStateToProps(state) {
 	return {
@@ -46,11 +44,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 	return{
 		toggleFollow: (userId) => { dispatch(toggleFollowAC(userId))},
-		// setUsers: (users) => { dispatch(setUsersAC(users))},
-		// getUsersQuantity: (number) => { dispatch(getUsersQuantityAC(number))},
-		// changePage: (pageNum) => { dispatch(changeCurrentPageAC(pageNum))},
-		// loadMoreUsers: () => { dispatch(loadMoreUsersAC())},
-		// toggleIsFetching: (isFetching) => { dispatch(toggleIsFetchingAC(isFetching))},
 		toggleFollowingProgress: (isFetching, userId) => { dispatch(toggleFollowingProgressAC(isFetching, userId))},
 
 		getUsersThunk: (currentPage, usersOnPage) => { dispatch(getUsersThunkCreator(currentPage, usersOnPage))},
@@ -58,3 +51,7 @@ function mapDispatchToProps(dispatch) {
 		toggleFollowUsers: (userId) => { dispatch(followUsersThunkCreator(userId))}
 	}
 }
+
+export const UsersContainer = compose(
+	connect(mapStateToProps, mapDispatchToProps),
+	withAuthRedirect)(UsersAPIComponent);

@@ -1,4 +1,4 @@
-import { usersAPI, usersFollowOnButton } from "../../apiDal/apiDal";
+import { usersAPI } from "../../apiDal/apiDal";
 
 let initialState = {
 	users: [],
@@ -100,25 +100,21 @@ export const loadMoreUsersThunkCreator = (currentPage, usersOnPage) => {
 }
 
 export const followUsersThunkCreator = (userId) => {
-	return(dispatch) => {
+	return (dispatch) => {
 
-		// dispatch(toggleFollowingProgressAC(true, userId))
-
-		usersFollowOnButton.checkFollow(userId)
+		usersAPI.checkFollow(userId)
 			.then(data => {
 				if (data === false) {
-					usersFollowOnButton.follow(userId)
+					usersAPI.follow(userId)
 						.then(
 							data => {
 								if (data.resultCode === 0) dispatch(toggleFollowAC(userId))
-								// dispatch(toggleFollowingProgressAC(false, userId))
 							}
 						)
 				}
 				else {
-					usersFollowOnButton.unfollow(userId).then(data => {
+					usersAPI.unfollow(userId).then(data => {
 						if (data.resultCode === 0) dispatch(toggleFollowAC(userId))
-						// dispatch(toggleFollowingProgressAC(false, userId))
 					})
 				}
 			})

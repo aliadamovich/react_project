@@ -1,3 +1,5 @@
+import { authAPI } from "../../apiDal/apiDal";
+
 let initialState = {
 
 	autID: {id: null, login: null, email: null},
@@ -20,9 +22,15 @@ export const authReducer = (state = initialState, action) => {
 	}
 }
 
-export const updateNewMessageTextActionCreator = (msg) => ({
-	type: 'UPDATE-NEW-MESSAGE-TEXT',
-	body: msg
-})
-export const sendNewMessageActionCreator = () => ({ type: 'ADD-MESSAGE' })
-export const setAuthProfileIdAC = (userAuth) => ({ type: 'SET-AUTH-PROFILE', userAuth })
+const setAuthProfileIdAC = (userAuth) => ({ type: 'SET-AUTH-PROFILE', userAuth })
+
+export const getAuthUserDataThunkCreator = () => {
+	return function(dispatch) {
+		authAPI.me()
+			.then(resp => {
+				if (resp.data.resultCode === 0) {
+					dispatch(setAuthProfileIdAC(resp.data.data))
+				}
+			})
+	}
+}

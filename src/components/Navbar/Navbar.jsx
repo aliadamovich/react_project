@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom';
 export const Navbar = () => {
 	return(
 		<div className={c.content}>
-			<a href='/profile' className={c.logo}>
+			<NavLink to='/profile' className={c.logo}>
 				<img src="https://mythemestore.com/beehive-preview/wp-content/themes/beehive/assets/images/logo-icon.svg" alt="" />
-			</a>
+			</NavLink>
 
 			<nav className={c.nav}>
 				<NavLink to="/profile" className={ ({isActive}) => isActive ? `${c.item} ${c.active}` : c.item}>

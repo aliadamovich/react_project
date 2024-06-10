@@ -13,22 +13,28 @@ export const usersAPI = {
 	getUsers (currentPage, usersOnPage) {
 		return axiosInstance.get(`users?page=${currentPage}&count=${usersOnPage}`)
 			.then(resp => resp.data)
-	}
-}
-
-
-export const usersFollowOnButton = {
+	},
 	checkFollow(userId) {
 		return axiosInstance.get(`follow/${userId}`)
-		.then (resp => resp.data)
+			.then(resp => resp.data)
 	},
-
 	follow(userId) {
 		return axiosInstance.post(`follow/${userId}`)
-		.then(resp => resp.data)
+			.then(resp => resp.data)
 	},
 	unfollow(userId) {
 		return axiosInstance.delete(`follow/${userId}`)
 			.then(resp => resp.data)
+	},
+	setProfile(profileId) {
+		return axiosInstance.get(`profile/${profileId}`)
+	}
+	
+}
+
+export const authAPI = {
+	me() {
+		return axiosInstance.get('auth/me')
 	}
 }
+
