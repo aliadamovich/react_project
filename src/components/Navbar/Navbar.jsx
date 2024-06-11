@@ -1,15 +1,17 @@
 import c from './Navbar.module.scss';
 import { NavLink } from 'react-router-dom';
+import { connect } from "react-redux";
 
-export const Navbar = () => {
+const Navbar = (props) => {
+	// debugger
 	return(
 		<div className={c.content}>
-			<NavLink to='/profile' className={c.logo}>
+			<NavLink to={'/profile/' + props.authorizedLoginId} className={c.logo}>
 				<img src="https://mythemestore.com/beehive-preview/wp-content/themes/beehive/assets/images/logo-icon.svg" alt="" />
 			</NavLink>
 
 			<nav className={c.nav}>
-				<NavLink to="/profile" className={ ({isActive}) => isActive ? `${c.item} ${c.active}` : c.item}>
+				<NavLink to={'/profile/' + props.authorizedLoginId} className={ ({isActive}) => isActive ? `${c.item} ${c.active}` : c.item}>
 					<div className={c.svg}>
 					<svg width="64px" height="64px" viewBox="0 0 24 24" fill="none"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier"  ></g><g id="SVGRepo_iconCarrier"> <path d="M14.9999 15.2547C13.8661 14.4638 12.4872 14 10.9999 14C7.40399 14 4.44136 16.7114 4.04498 20.2013C4.01693 20.4483 4.0029 20.5718 4.05221 20.6911C4.09256 20.7886 4.1799 20.8864 4.2723 20.9375C4.38522 21 4.52346 21 4.79992 21H9.94465M13.9999 19.2857L15.7999 21L19.9999 17M14.9999 7C14.9999 9.20914 13.2091 11 10.9999 11C8.79078 11 6.99992 9.20914 6.99992 7C6.99992 4.79086 8.79078 3 10.9999 3C13.2091 3 14.9999 4.79086 14.9999 7Z"  strokeWidth="2"  ></path> </g></svg>
 					</div>
@@ -61,3 +63,5 @@ export const Navbar = () => {
 		
 	)
 }
+const mapStateToProps = (state) => ({ authorizedLoginId: state.auth.autID.id })
+export default connect(mapStateToProps, null)(Navbar)

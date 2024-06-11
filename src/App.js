@@ -2,7 +2,7 @@
 
 import './App.scss';
 import HeaderContainer from './components/Header/HeaderContainer';
-import { Navbar } from './components/Navbar/Navbar';
+import  Navbar from './components/Navbar/Navbar';
 import { ProfilePageContainer } from './components/ProfilePage/ProfilePageContainer';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DialogsContainer } from './components/DialogsPage/DialogsContainer';
@@ -21,7 +21,7 @@ function App() {
 				<div className='wrapper__container'>
 					<Routes>
 						<Route path="/" element={<ProfilePageContainer />} />
-						<Route path='/profile/:userId?' element={<ProfilePageContainer />}/>
+						<Route path='/profile/:userId' element={<ProfilePageContainer />}/>
 						<Route path='/dialogs/*' element={<DialogsContainer  />} />
 						<Route path='/gallery' element={<GalleryContainer /> }/>
 						<Route path='/users' element={<UsersPage />} />

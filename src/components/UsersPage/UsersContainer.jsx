@@ -40,7 +40,7 @@ function mapStateToProps(state) {
 		followingInProgress: state.usersPage.followingInProgress
 	}
 }
-
+ 
 function mapDispatchToProps(dispatch) {
 	return{
 		toggleFollow: (userId) => { dispatch(toggleFollowAC(userId))},

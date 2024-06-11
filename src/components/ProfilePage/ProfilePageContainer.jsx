@@ -27,7 +27,7 @@ class ProfileAPIComponent extends React.Component {
 	componentDidMount() {
 
 		let profileId = this.props.router.params.userId;
-		if (!profileId) profileId = 1079;
+		if (!profileId) profileId = this.props.authorizedLoginId;
 
 		this.props.getUserProfileThunk(profileId);
 	}
@@ -40,6 +40,8 @@ function mapStateToProps(state) {
 	return {
 		userProfile: state.profilePage.userProfile,
 		photoGrid: state.grid.photoGrid,
+		isAuth: state.auth.isAuth,
+		authorizedLoginId: state.auth.autID.id
 	}
 }
 
