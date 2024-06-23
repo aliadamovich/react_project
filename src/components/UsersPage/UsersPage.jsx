@@ -2,12 +2,13 @@ import c from './UsersPage.module.scss';
 import { UsersContainer } from './UsersContainer';
 import { Search } from '../common/Search/Search';
 import React from 'react';
+import { Container } from '../common/Container';
 
 
 export const UsersPage = () => {
 	return(
 		<div className={c.users}>
-			<div className={c.users__container}>
+			<Container>
 				<div className={c.users__content}>
 
 					<Search />
@@ -69,7 +70,7 @@ export const UsersPage = () => {
 					</div>
 
 				</div>
-			</div>
+			</Container>
 		</div>
 	)
 }

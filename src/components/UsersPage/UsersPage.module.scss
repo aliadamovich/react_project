@@ -1,13 +1,5 @@
 .users {
-	&__container {
-		max-width: 1400px;
-		padding: 0 10px;
-		margin: 0px auto;
 
-		@media (max-width:1500px) {
-			max-width: 1200px;
-		}
-	}
 	&__content{
 		display: grid;
 		grid-template-columns: 70% auto;

@@ -4,6 +4,7 @@ import { ActivityContainer } from './Activity/ActivityContainer';
 import { PhotoGrid } from './../GalleryPage/Gallery';
 import { Loader } from '../common/Loader/Loader';
 import user from './../images/user.png';
+import { Container } from '../common/Container';
 
 export const ProfilePage = (props) => {
 	// debugger
@@ -16,7 +17,7 @@ export const ProfilePage = (props) => {
 		 <div className={c.cover}>
 			 <img alt="cover" src="https://us.123rf.com/450wm/missisya/missisya1805/missisya180500614/102459865-panoramic-view-of-beautiful-row-of-mountains-and-hills-in-the-evening-with-wonderful-breathtaking.jpg?ver=6" />
 		 </div>
-		 <div className={c.container}>
+		 <Container>
 			 <div className={c.profile}>
 				 <div className={c.profile_user}>
 					 <div className={c.avatar}>
@@ -63,7 +64,7 @@ export const ProfilePage = (props) => {
 					<ActivityContainer store={props.store} />
 				 </div>
 			 </div>
-		 </div>
+		 </Container>
 
 	 </div>
  )

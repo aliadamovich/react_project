@@ -16,11 +16,7 @@
 		align-items: center;
 		cursor: pointer;
 		transition: all 0.3s ease 0s;
-		svg {
-			width: 15px;
-			height: 15px;
-			fill: white;
-		}
+		
 		&:hover{
 			opacity: 0.8;
 		}

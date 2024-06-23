@@ -17,6 +17,7 @@ function App() {
 		<BrowserRouter>
 			<div className="wrapper">
 				<HeaderContainer />
+				<Routes><Route path='/login' element={<LoginPage />} /></Routes>
 				<Navbar />
 				<div className='wrapper__container'>
 					<Routes>
@@ -25,7 +26,7 @@ function App() {
 						<Route path='/dialogs/*' element={<DialogsContainer  />} />
 						<Route path='/gallery' element={<GalleryContainer /> }/>
 						<Route path='/users' element={<UsersPage />} />
-						<Route path='/login' element={<LoginPage />} />
+						{/* <Route path='/login' element={<LoginPage />} /> */}
 					</Routes>
 				</div>
 			</div>

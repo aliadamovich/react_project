@@ -1,12 +1,13 @@
 import c from './Gallery.module.scss';
 import { Search } from '../common/Search/Search';
 import {Recent} from '../common/Recent/Recent';
+import { Container } from '../common/Container';
 
 export const Gallery = (props) => {
 
 	return (
 		<div className={c.gallery}>
-			<div className={c.gallery__container}>
+			<Container>
 				<div className={c.gallery__content}>
 					<div className={c.gallery__body}>
 						<Search />
@@ -18,7 +19,7 @@ export const Gallery = (props) => {
 						<Recent />
 					</div>
 				</div>
-			</div>
+			</Container>
 		</div>
 	)
 }
